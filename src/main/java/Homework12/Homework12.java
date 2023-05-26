@@ -8,7 +8,7 @@ import static Configuration.BaseClass.driver;
 public class Homework12 {
 
     public static final String urlHillel = "https://ithillel.ua/";
-    public static final String hillelTitle ="Комп'ютерна школа Hillel у Києві: Курси IT-технологій";
+    public static final String hillelTitle ="Комп'ютерна школа Hillel Online: Курси IT-технологій";
     public static void main(String[] args) throws InterruptedException {
         driver.get(urlHillel);
         if(!driver.getTitle().equals(hillelTitle)){
