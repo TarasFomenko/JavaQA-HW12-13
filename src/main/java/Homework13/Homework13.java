@@ -1,9 +1,13 @@
 package Homework13;
 
+import Configuration.WEBDRIVERS;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static Configuration.BaseClass.driver;
 
@@ -22,10 +26,11 @@ public class Homework13 {
         listOfCourses.click();
         WebElement programming = driver.findElement(By.xpath("//button[@data-category ='programming']"));
         programming.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
         WebElement frontEndBasic = driver.findElement(By.xpath("//*[@id=\"block-202987\"]//a[@href='https://ithillel.ua/courses/front-end-basic']"));
         frontEndBasic.click();
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
+
         //Добрались до начала списка учителей
         ScrollToElement.scrollToElementVisibilityOf(driver, new By.ByXPath("//ul[@class ='coach-list coaches_list']"));
 
@@ -43,5 +48,5 @@ public class Homework13 {
         for (String value : teachersNames) {
             System.out.println(value);
         }
-
-    }}
+    }
+}
